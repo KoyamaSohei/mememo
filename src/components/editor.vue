@@ -27,6 +27,7 @@ export default {
     this.provider = new WebrtcProvider('tiptap-collaboration-cursor-extension', ydoc)
 
     this.editor = new Editor({
+      autofocus: true,
       extensions: [
         ...defaultExtensions(),
         Collaboration.configure({
@@ -40,6 +41,7 @@ export default {
           },
         }),
       ],
+      content: "Hello,World"
     })
   },
 
