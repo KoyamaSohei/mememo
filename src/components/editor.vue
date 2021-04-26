@@ -85,4 +85,9 @@ export default {
   border-radius: 3px 3px 3px 0;
   white-space: nowrap;
 }
+
+blockquote {
+  border-left: 1px solid gray;
+  padding-left: 10px;
+}
 </style>
