@@ -9,6 +9,8 @@ import Collaboration from '@tiptap/extension-collaboration'
 import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
 import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
+import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
+
 
 export default {
   components: {
@@ -25,6 +27,11 @@ export default {
   mounted() {
     const ydoc = new Y.Doc()
     this.provider = new WebrtcProvider('tiptap-collaboration-cursor-extension', ydoc)
+    const name = uniqueNamesGenerator({
+      dictionaries: [adjectives, animals, colors],
+      length: 3
+    });
+    const color = '#' + ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
 
     this.editor = new Editor({
       autofocus: true,
@@ -36,8 +43,8 @@ export default {
         CollaborationCursor.configure({
           provider: this.provider,
           user: {
-            name: 'Cyndi Lauper',
-            color: '#f783ac',
+            name,
+            color,
           },
         }),
       ],
