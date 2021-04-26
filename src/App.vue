@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Editor msg="Welcome to Your Vue.js App"/>
+  <Editor />
 </template>
 
 <script>
