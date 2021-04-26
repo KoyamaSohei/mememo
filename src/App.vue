@@ -20,6 +20,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px auto 0 auto;
+  max-width: 825px;
+  max-height: 100vh;
+}
+*:focus {
+  outline: none;
 }
 </style>
